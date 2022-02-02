@@ -34,7 +34,7 @@ restaurant = service.addRestaurant("Amelie's cafe","Chennai",openingTime,closing
 restaurant.addToMenu("Sweet corn soup",119);
 restaurant.addToMenu("Vegetable lasagne", 269);
 assertThrows(restaurantNotFoundException.class,
-()->service.findRestaurantByName("Sangi is an ass cafe"));
+()->service.findRestaurantByName("Friend's cafe"));
 }
     
     //<<<<<<<<<<<<<<<<<<<<SEARCHING>>>>>>>>>>>>>>>>>>>>>>>>>>
