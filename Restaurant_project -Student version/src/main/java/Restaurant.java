@@ -38,6 +38,13 @@ return false;
         }
         return null;
     }
+private int findItemPrice(Item itemName){
+for(Item item: menu) {
+if(item.getName().equals(itemName.getName()))
+return item.getPrice();
+}
+return 0;
+}
 
     public void addToMenu(String name, int price) {
         Item newItem = new Item(name,price);
@@ -65,4 +72,13 @@ return false;
         return name;
     }
 
+}
+public int orderValue(List<Item> list) {
+int total = 0;
+
+for(int i=0;i<list.size();i++) {
+total+=findItemPrice(list.get(i));
+}
+return total;
+}
 }

@@ -1,6 +1,4 @@
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -35,6 +33,16 @@ restaurant.addToMenu("Sizzling brownie",319);
 assertEquals(false,restaurant.isRestaurantOpen());
 
     }
+@Test
+public void order_total_value(){
+LocalTime openingTime = LocalTime.parse("10:30:00");
+LocalTime closingTime = LocalTime.parse("16:00:00");
+restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+restaurant.addToMenu("Sweet corn soup",119);
+restaurant.addToMenu("Vegetable lasagne", 269);
+restaurant.addToMenu("Sizzling brownie",319);
+assertEquals(707,restaurant.orderValue(restaurant.getMenu()));
+}
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
